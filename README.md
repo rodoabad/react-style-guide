@@ -73,3 +73,71 @@ import my-component from './my-component';
 // Good
 import MyComponent from './my-component';
 ```
+
+## Declaration
+
+* Always use a `displayName` when naming your components.
+* It should have the same name as your arrow function.
+* It should always be located immediately after your class or stateless component and separated by a new line.
+```javascript
+// Bad
+const MyComponent = () =>
+  <div className='my-component'>
+    {'Hello world'}
+  </div>;
+MyComponent.displayName = 'MyComponent';
+
+// Bad
+const MyComponent = () =>
+  <div className='my-component'>
+    {'Hello world'}
+  </div>;
+
+MyComponent.displayName = 'AnotherName';
+```
+
+```javascript
+// Good
+const MyComponent = () =>
+  <div className='my-component'>
+    {'Hello world'}
+  </div>;
+  
+MyComponent.displayName = 'MyComponent';
+```
+
+* The top level element for your component should always have a `className` with the same name as your component separated by hyphens and in lowercase.
+
+```javascript
+// Bad
+const MyComponent = () =>
+  <div>
+    {'Hello world'}
+  </div>;
+  
+// Bad
+const MyComponent = () =>
+  <div className='myComponent'>
+    {'Hello world'}
+  </div>;
+  
+// Bad
+const MyComponent = () =>
+  <div className='MyComponent'>
+    {'Hello world'}
+  </div>;
+  
+// Bad
+const MyComponent = () =>
+  <div className='my_component'>
+    {'Hello world'}
+  </div>;
+```
+
+```javascript
+// Good
+const MyComponent = () =>
+  <div className='my-component'>
+    {'Hello world'}
+  </div>;
+```
