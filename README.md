@@ -34,3 +34,36 @@ const MyComponent = () =>
     {'Hello world'}
   </div>;
 ```
+
+## Naming Convention
+
+* Always use `.js` as your extension instead of `.jsx`
+* Use lowercase and hypens for react component file names e.g. `my-component.js`
+
+* Use camelCase for instances
+
+```javascript
+// Bad
+const MyComponent = <MyComponent/>;
+
+const my-component = <MyComponent/>;
+```
+
+```javascript
+// Good
+const myComponent = <MyComponent/>;
+```
+
+* Use PascalCase for React components
+
+```javascript
+// Bad
+import myComponent from './my-component';
+
+import my-component from './my-component';
+```
+
+```javascript
+// Good
+import MyComponent from './my-component';
+```
